@@ -8,4 +8,8 @@ const houseSchema = new Schema({
     createdAt: { type: Date, default: Date.now },
 });
 const HouseModel = mongoose.model("house", houseSchema);
-module.exports = HouseModel;
+const FavPropertyModel = mongoose.model("favProperty", houseSchema);
+module.exports = {
+    HouseModel,
+    FavPropertyModel
+};
