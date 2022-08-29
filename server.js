@@ -1,7 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const app = express()
-const setupDB = require("./src/config/db");
+const settingDB = require("./src/config/db");
 const authRoutes = require("./src/routes/authRoutes")
 const houseRoutes = require("./src/routes/houseRoutes")
 require('dotenv').config();
@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-setupDB()
+settingDB()
 
 app.use("/auth", authRoutes)
 app.use("/house", houseRoutes)
